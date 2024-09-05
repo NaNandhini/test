@@ -28,7 +28,7 @@ pipeline {
         stage('docker deploy'){
             steps{
                 sh 'docker container rm -f test'
-                sh 'docker run --name test -itd -p 9393:9393 detailsapp:${BUILD_NUMBER}'
+                sh 'docker run --name test -itd -p 9393:9393 test:${BUILD_NUMBER}'
                 echo 'docker container is created'
                 echo 'docker container is running'
             }
